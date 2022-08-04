@@ -1,0 +1,15 @@
+sinks:
+  datadog:
+    addr: 127.0.0.1
+    port: 8125
+    tags: [requestcount, requestlatency]
+  newrelic:
+    applicationName: a
+    licenseKey: a
+    ignoredStatusCodesStart: 400
+    ignoredStatusCodesEnd: 499
+    crossApplicationTracer: enabled
+    distributedTracer: enabled
+
+metrics:
+  float64: [gauge, histogram, distribution, timeInMilliseconds]
