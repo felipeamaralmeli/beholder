@@ -1,7 +1,9 @@
 package interfaces
 
-import "github.com/felipeamaralmeli/beholder/pkg/sources/contracts"
+import "github.com/felipeamaralmeli/beholder/pkg/sinks/interfaces"
 
 type Observable interface {
-	GetObservableData() contracts.ObservableData
+	Register(observer interfaces.Sink)
+	Unregister(observer interfaces.Sink)
+	Notify()
 }

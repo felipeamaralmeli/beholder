@@ -3,6 +3,8 @@ package consts
 const (
 	DefaultConfigLocation = "configs/default.yaml"
 
+	DatadogSinkName = "datadog"
+
 	IncrementMetricType    = "increment"
 	DecrementMetricType    = "decrement"
 	GaugeMetricType        = "gauge"

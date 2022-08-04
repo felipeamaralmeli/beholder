@@ -12,7 +12,9 @@ import (
 )
 
 type datadog struct {
-	Client statsd.ClientInterface
+	ID                string
+	AcceptableMetrics []string
+	Client            statsd.ClientInterface
 }
 
 func NewDatadogSink(config interfaces.Config) (interfaces.Sink, error) {
@@ -25,12 +27,13 @@ func NewDatadogSink(config interfaces.Config) (interfaces.Sink, error) {
 	}
 
 	return &datadog{
+		ID:     consts.DatadogSinkName,
 		Client: client,
 	}, nil
 }
 
-func (s *datadog) Close() error {
-	return s.Close()
+func (s *datadog) GetID() string {
+	return s.ID
 }
 
 func (s *datadog) SendMetrics(metrics []*contracts.Metric) {

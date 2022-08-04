@@ -4,17 +4,15 @@ import (
 	"errors"
 	"fmt"
 	"github.com/felipeamaralmeli/beholder/pkg/sinks/consts"
-	"github.com/felipeamaralmeli/beholder/pkg/sinks/interfaces"
 	"time"
 )
 
 type Metric struct {
-	Key          string
-	Tags         []string
-	Value        interface{}
-	Rate         float64
-	MetricType   string
-	Destinations []interfaces.Sink
+	Key        string
+	Tags       []string
+	Value      interface{}
+	Rate       float64
+	MetricType string
 }
 
 var metricTypeMap = map[string][]string{
