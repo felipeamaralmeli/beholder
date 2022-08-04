@@ -3,7 +3,8 @@ package consts
 const (
 	DefaultConfigLocation = "configs/default.yaml"
 
-	DatadogSinkName = "datadog"
+	DatadogSinkName  = "datadog"
+	NewRelicSinkName = "newrelic"
 
 	IncrementMetricType    = "increment"
 	DecrementMetricType    = "decrement"
@@ -14,5 +15,5 @@ const (
 	SetMetricType          = "set"
 	TimingMetricType       = "timing"
 	TimeInMillisMetricType = "timeInMillis"
-	Metric                 = ""
+	TraceType              = "trace"
 )

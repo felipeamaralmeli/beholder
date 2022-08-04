@@ -4,12 +4,12 @@ sinks:
     port: 8125
     tags: [requestcount, requestlatency]
   newrelic:
-    applicationName: a
-    licenseKey: a
+    applicationName: api-name
+    licenseKey: api-key
     ignoredStatusCodesStart: 400
     ignoredStatusCodesEnd: 499
-    crossApplicationTracer: enabled
-    distributedTracer: enabled
+    crossApplicationTracer: true
+    distributedTracer: true
 
 metrics:
   float64: [gauge, histogram, distribution, timeInMilliseconds]

@@ -18,7 +18,7 @@ func NewNewRelicConfig() interfaces.Config {
 
 func (s NewRelicConfig) BuildDefaults(configs map[interface{}]interface{}) interfaces.Config {
 	sinkMap := configs["sinks"].(map[string]interface{})
-	nrConfigs := sinkMap["newRelic"].(map[string]interface{})
+	nrConfigs := sinkMap["newrelic"].(map[string]interface{})
 	ignoredStatusCodesStart := nrConfigs["ignoredStatusCodesStart"].(int)
 	ignoredStatusCodesEnd := nrConfigs["ignoredStatusCodesEnd"].(int)
 	return &NewRelicConfig{

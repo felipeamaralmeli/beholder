@@ -12,9 +12,8 @@ import (
 )
 
 type datadog struct {
-	ID                string
-	AcceptableMetrics []string
-	Client            statsd.ClientInterface
+	ID     string
+	Client statsd.ClientInterface
 }
 
 func NewDatadogSink(config interfaces.Config) (interfaces.Sink, error) {
@@ -36,10 +35,15 @@ func (s *datadog) GetID() string {
 	return s.ID
 }
 
-func (s *datadog) SendMetrics(metrics []*contracts.Metric) {
+func (s *datadog) SendMetrics(metrics ...*contracts.Metric) {
 	for _, metric := range metrics {
 		s.getFunctionByMetricType(metric.MetricType)(metric)
 	}
+}
+
+func (s *datadog) StartTransaction(name string) interface{} {
+	//TODO implement me
+	panic("implement me")
 }
 
 func (s *datadog) Increment(metric *contracts.Metric) {
